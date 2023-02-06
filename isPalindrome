@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        //store x in original variable for end comparison 
+        int original = x; 
+        //if x is negative - then false 
+        if(x < 0)
+        {
+            return false;
+        }
+        //if x is one digit - then true
+        if(x < 9 )
+        {
+            return true;
+        }
+
+        //new varaible to store reversed integer 
+        int reversed = 0; 
+        while(x >= 1)
+        {
+            
+            //get each digit from the back of x into reversed
+            reversed = (reversed * 10) + (x % 10); 
+            //take off a digit from x 
+            x = x/10;
+        }
+
+        
+        return original == reversed;
+    }
+}
